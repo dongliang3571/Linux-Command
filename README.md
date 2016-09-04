@@ -58,7 +58,9 @@
   ```
 - `chown` is used to change file owner and group
   ```bash
-  
+  # Set the user 'daniel' from the group of 'admins' as owners of the directory
+  # Note: -R is there when it's a directory
+  chown -R daniel:admins important_directory
   ```
 
 
@@ -71,3 +73,44 @@
   find / -type f -exec echo {} \; # Use the echo(1) command to print out a list of all the files
   ```
   
+- `cat` is to concatenate and print files
+  ```bash
+  # create a file named file.c and waiting for you to input content
+  # Enter Ctrl-d to stop inputing and save the file
+  cat > file.c
+  ```
+  
+- `rm` is to remove files
+  ```bash
+  rm file.c
+  # -i (interactive) option which makes the command prompt you for confirmation that you want to remove each file. Answer: y or n
+  rm -i file.c
+  ```
+
+- `file` is to examines the content of a file and reports what type of file it is
+  ```bash
+  file file.sh
+  # file.sh: Bourne-Again shell script text executable
+  ```
+
+- `head` is to display first 10 lines of the file
+- `tail` is to display last 10 lines of the file
+  ```bash
+  head file.c
+  tail file.c
+  
+  # -n can be used to define numbers of lines you want
+  head -n 20 file.c # will give first 20 lines of the file
+  
+  # Trick to get lines in the middle of the file
+  head -n 5 | tail -n 2 # this will give you line 4 and 5
+  ```
+  
+- `ls` is to list the files in a directory
+  ```bash
+  # -l stands for long listing, to get more information about each file and directory
+  # -a stands for all, lists hidden files, "hidden" files that begin with a '.' (dot). All other files and directories are also listed
+  # -t sort by modification time, newest first
+  # 
+  ls -la # will list all files including hidden ones in long listing format
+  ```
