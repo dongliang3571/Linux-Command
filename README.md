@@ -66,6 +66,7 @@
 
 - `find` is used to find files in the operating system
   ```bash
+  # Format: find <path> -name <filename> -print, <filename> can be wild card but with quotes, eg. '*.cp'
   find / \! -name "*.c" -print # Print out a list of all the files whose names do not end in .c
   find / -newer ttt -user wnj -print # Print out a list of all the files owned by user ``wnj'' that are newer than the file ttt
   find / \! \( -newer ttt -user wnj \) -print # Print out a list of all the files which are not both newer than ttt and owned by ``wnj''
@@ -111,6 +112,7 @@
   # -l stands for long listing, to get more information about each file and directory
   # -a stands for all, lists hidden files, "hidden" files that begin with a '.' (dot). All other files and directories are also listed
   # -t sort by modification time, newest first
-  # 
+  # -h make file size human readable, size will end with unit suffixes like Byte, Kilobyte, Megabyte, Gigabyte, Terabyte and Petabyte 
+  # -s list file size
   ls -la # will list all files including hidden ones in long listing format
   ```
