@@ -125,7 +125,8 @@
   # -v for date of release of the kernel version
   # -m for machine hardware name
   # -p for CPU type (not available on some systems)
-  # -i for general hardware platform and -o for operating system.
+  # -i for general hardware platform
+  # -o for operating system
   
   uname -sr # Linux 3.13.0-88-generic
   ```
