@@ -116,3 +116,16 @@
   # -s list file size
   ls -la # will list all files including hidden ones in long listing format
   ```
+
+ - `uname` is to report basic information about a computer's software and hardware
+   ```bash
+   # -s for kernel name (i.e., the default action)
+   # -n for network node host name
+   # -r for kernel version number and release level
+   # -v for date of release of the kernel version
+   # -m for machine hardware name
+   # -p for CPU type (not available on some systems)
+   # -i for general hardware platform and -o for operating system.
+   
+   uname -sr # Linux 3.13.0-88-generic
+   ```
