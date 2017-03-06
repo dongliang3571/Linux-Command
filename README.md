@@ -130,3 +130,25 @@
   
   uname -sr # Linux 3.13.0-88-generic
   ```
+
+- 'mkdir' is to create directories
+
+```bash
+-m, --mode=MODE
+              set file mode (as in chmod), not a=rwx - umask
+
+       -p, --parents
+              no error if existing, make parent directories as needed
+
+       -v, --verbose
+              print a message for each created directory
+
+       -Z, --context=CTX
+              set the SELinux security context of each  created  directory  to
+              CTX
+
+       --help display this help and exit
+
+       --version
+              output version information and exit
+```
