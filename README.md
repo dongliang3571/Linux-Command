@@ -133,22 +133,18 @@
 
 - 'mkdir' is to create directories
 
-```bash
--m, --mode=MODE
-              set file mode (as in chmod), not a=rwx - umask
+  ```bash
+  # -m, --mode=MODE, set file mode (as in chmod), not a=rwx - umask
+  mkdir -m 777 myFolder
+  
+  # -p, --parents, no error if existing, make parent directories as needed
+  mkdir -p parentFolder/childFolder # error will be generated if no -p added
+  
+  # -v, --verbose, print a message for each created directory
 
-       -p, --parents
-              no error if existing, make parent directories as needed
+  # -Z, --context=CTX, set the SELinux security context of each  created  directory  to CTX
 
-       -v, --verbose
-              print a message for each created directory
+  # --help display this help and exit
 
-       -Z, --context=CTX
-              set the SELinux security context of each  created  directory  to
-              CTX
-
-       --help display this help and exit
-
-       --version
-              output version information and exit
-```
+  # --version, output version information and exit
+  ```
