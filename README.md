@@ -131,7 +131,7 @@
   uname -sr # Linux 3.13.0-88-generic
   ```
 
-- 'mkdir' is to create directories
+- `mkdir` is to create directories
 
   ```bash
   # -m, --mode=MODE, set file mode (as in chmod), not a=rwx - umask
@@ -148,3 +148,16 @@
 
   # --version, output version information and exit
   ```
+
+## ShortCut
+
+### Searching Through The Command History
+
+```bash
+# To search backward in the history for a particular string, type C-r. Typing C-s searches forward through the histor
+# ie. C-r goes in direction of from the newest histroy to the oldest
+# ie. C-s goes in direction of from the oldest to the newest
+
+# example:
+(reverse-i-search)`ss': ssh -vvv lp123
+```
