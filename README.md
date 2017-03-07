@@ -114,6 +114,7 @@
   # -t sort by modification time, newest first
   # -h make file size human readable, size will end with unit suffixes like Byte, Kilobyte, Megabyte, Gigabyte, Terabyte and Petabyte 
   # -s list file size
+  # -G list with colors
   ls -la # will list all files including hidden ones in long listing format
   ```
 
@@ -149,6 +150,12 @@
   # --version, output version information and exit
   ```
 
+- `alias` is to create shortcuts or abbreviations
+
+```bash
+alias ll="ls -al"
+alias ls="ls -G"
+```
 ## ShortCut
 
 ### Searching Through The Command History
