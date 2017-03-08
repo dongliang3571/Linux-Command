@@ -156,6 +156,22 @@
 alias ll="ls -al"
 alias ls="ls -G"
 ```
+
+- `pushd` and 'popd', The pushd command saves the current working directory in memory so it can be returned to at any time, optionally changing to a new directory. The popd command returns to the path at the top of the directory stack.
+
+```bash
+# your current folder is ~/
+# you do
+pushd ~/.ssh/
+
+# it take you to ~/.shh, but saves ~/ in the stack
+
+# now you do
+popd
+
+# it takes you to ~/
+```
+
 ## ShortCut
 
 ### Searching Through The Command History
