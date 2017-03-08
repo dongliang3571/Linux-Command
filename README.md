@@ -152,25 +152,28 @@
 
 - `alias` is to create shortcuts or abbreviations
 
-```bash
-alias ll="ls -al"
-alias ls="ls -G"
-```
+  ```bash
+  alias ll="ls -al"
+  alias ls="ls -G"
+  ```
 
-- `pushd` and 'popd', The pushd command saves the current working directory in memory so it can be returned to at any time, optionally changing to a new directory. The popd command returns to the path at the top of the directory stack.
+- `pushd`, `popd` and `dirs`. The `pushd` command saves the current working directory in memory so it can be returned to at any time, optionally changing to a new directory. The `popd` command returns to the path at the top of the directory stack. This directory stack is accessed by the command `dirs` in Unix
 
-```bash
-# your current folder is ~/
-# you do
-pushd ~/.ssh/
+  ```bash
+  # your current folder is ~/
+  # you do
+  pushd ~/.ssh/
+  # it take you to ~/.shh, but saves ~/ in the stack
+  
+  # now you do
+  dirs
+  # output is ~/
+  
+  # now you do
+  popd
 
-# it take you to ~/.shh, but saves ~/ in the stack
-
-# now you do
-popd
-
-# it takes you to ~/
-```
+  # it takes you to ~/
+  ```
 
 ## ShortCut
 
