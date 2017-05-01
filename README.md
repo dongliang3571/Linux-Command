@@ -175,6 +175,24 @@
   # it takes you to ~/
   ```
 
+- 'ps' - report a snapshot of the current processes.
+
+Note that "ps -aux" is distinct from "ps aux". The POSIX and UNIX standards require that "ps -aux" print all processes owned by a user named "x", as well as printing all processes that would be selected by the -a option. If the user
+
+  ```bash
+  ps aux | grep 'something'
+  # it's identical to
+  ps -e | grep 'something'
+  
+  # a show processes for all users
+  # u display the process's user/owner
+  # x also show processes not attached to a terminal
+  # -A Display information about other users' processes, including those without controlling terminals.
+  # -e Identical to -A
+  # -f Display the uid, pid, parent pid, recent CPU usage, process start time, controlling tty, elapsed CPU usage, and the associated command.  If the -u option is also used, display the user name rather then the numeric uid.  When -o or -O is used to add to the      display following -f, the command field is not truncated as severely as it is in other formats.
+  ````
+
+named "x" does not exist, this ps may interpret the command as "ps aux"
 ## ShortCut
 
 ### Searching Through The Command History
