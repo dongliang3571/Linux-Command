@@ -194,6 +194,10 @@ Note that "ps -aux" is distinct from "ps aux". The POSIX and UNIX standards requ
 
 named "x" does not exist, this ps may interpret the command as "ps aux"
 
+- `du` (abbreviated from disk usage) is a standard Unix program used to estimate file space usage—space used under a particular directory or files on a file system.
+
+- `df` (abbreviation for disk free) is a standard Unix command used to display the amount of available disk space for file systems on which the invoking user has appropriate read access. df is typically implemented using the statfs or statvfs system calls.
+
 ## ShortCut
 
 ### Searching Through The Command History
