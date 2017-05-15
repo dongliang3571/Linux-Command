@@ -219,10 +219,26 @@
 
   #The user will then be prompted for the password of the account with the username alice.
   ```
+  
+  [good resource](https://unix.stackexchange.com/questions/7013/why-do-we-use-su-and-not-just-su)
+  
+  su - invokes a login shell after switching the user. A login shell resets most environment variables, providing a clean base.
+
+  su just switches the user, providing a normal shell with an environment nearly the same as with the old user.
 
 - `du` (abbreviated from disk usage) is a standard Unix program used to estimate file space usage—space used under a particular directory or files on a file system.
 
 - `df` (abbreviation for disk free) is a standard Unix command used to display the amount of available disk space for file systems on which the invoking user has appropriate read access. df is typically implemented using the statfs or statvfs system calls.
+
+- double dash `--`
+
+  More precisely, a double dash (--) is used in bash built-in commands and many other commands to signify the end of command options, after which only positional parameters are accepted.
+
+  Example use: lets say you want to grep a file for the string -v - normally -v will be considered the option to reverse the matching meaning (only show lines that do not match), but with -- you can grep for string -v like this:
+
+  ```bash
+  grep -- -v file
+  ```
 
 ## ShortCut
 
