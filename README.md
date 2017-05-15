@@ -177,7 +177,7 @@
 
 - 'ps' - report a snapshot of the current processes.
 
-Note that "ps -aux" is distinct from "ps aux". The POSIX and UNIX standards require that "ps -aux" print all processes owned by a user named "x", as well as printing all processes that would be selected by the -a option. If the user
+  Note that "ps -aux" is distinct from "ps aux". The POSIX and UNIX standards require that "ps -aux" print all processes owned by a user named "x", as well as printing all processes that would be selected by the -a option. If the user
 
   ```bash
   ps aux | grep 'something'
@@ -192,32 +192,32 @@ Note that "ps -aux" is distinct from "ps aux". The POSIX and UNIX standards requ
   # -f Display the uid, pid, parent pid, recent CPU usage, process start time, controlling tty, elapsed CPU usage, and the associated command.  If the -u option is also used, display the user name rather then the numeric uid.  When -o or -O is used to add to the      display following -f, the command field is not truncated as severely as it is in other formats.
   ```
   
-named "x" does not exist, this ps may interpret the command as "ps aux"
+  named "x" does not exist, this ps may interpret the command as "ps aux"
   
 - su (short for substitute user) command makes it possible to change a login session's owner (i.e., the user who originally created that session by logging on to the system) without the owner having to first log out of that session.
 
-Although su can be used to change the ownership of a session to any user, it is most commonly employed to change the ownership from an ordinary user to the root (i.e., administrative) user, thereby providing access to all parts of and all commands on the computer or system. For this reason, it is often referred to (although somewhat inaccurately) as the superuser command. It is also sometimes called the switch user command.
+  Although su can be used to change the ownership of a session to any user, it is most commonly employed to change the ownership from an ordinary user to the root (i.e., administrative) user, thereby providing access to all parts of and all commands on the computer or system. For this reason, it is often referred to (although somewhat inaccurately) as the superuser command. It is also sometimes called the switch user command.
 
-```bash
-#A simplified expression of the syntax of the su command is:
+  ```bash
+  #A simplified expression of the syntax of the su command is:
+  
+  su [options] [commands] [-] [username]
 
-su [options] [commands] [-] [username]
+  #The square brackets indicate that the enclosed item is optional. Thus, the simplest way to use the su command is to just type:
 
-#The square brackets indicate that the enclosed item is optional. Thus, the simplest way to use the su command is to just type:
+  su
 
-su
+  #The operating system assumes that, in the absence of a username, the user wants to change to a root session, and thus the user is prompted for the root password as soon as the ENTER key is pressed. This produces the same result as typing:
 
-#The operating system assumes that, in the absence of a username, the user wants to change to a root session, and thus the user is prompted for the root password as soon as the ENTER key is pressed. This produces the same result as typing:
+  su root
 
-su root
+  #If the correct password is provided, ownership of the session is changed to root.
 
-#If the correct password is provided, ownership of the session is changed to root.
+  #Likewise, to transfer the ownership of a session to any other user, the name of that user is typed after su and a space. For example, to change the owner of the current login session to a user named alice, type the following:
 
-#Likewise, to transfer the ownership of a session to any other user, the name of that user is typed after su and a space. For example, to change the owner of the current login session to a user named alice, type the following:
+  su alice
 
-su alice
-
-#The user will then be prompted for the password of the account with the username alice.
+  #The user will then be prompted for the password of the account with the username alice.
 ```
 
 
