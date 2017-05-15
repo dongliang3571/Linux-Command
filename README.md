@@ -175,7 +175,7 @@
   # it takes you to ~/
   ```
 
-- 'ps' - report a snapshot of the current processes.
+- `ps` - report a snapshot of the current processes.
 
   Note that "ps -aux" is distinct from "ps aux". The POSIX and UNIX standards require that "ps -aux" print all processes owned by a user named "x", as well as printing all processes that would be selected by the -a option. If the user
 
@@ -194,7 +194,7 @@
   
   named "x" does not exist, this ps may interpret the command as "ps aux"
   
-- su (short for substitute user) command makes it possible to change a login session's owner (i.e., the user who originally created that session by logging on to the system) without the owner having to first log out of that session.
+- `su` (short for substitute user) command makes it possible to change a login session's owner (i.e., the user who originally created that session by logging on to the system) without the owner having to first log out of that session.
 
   Although su can be used to change the ownership of a session to any user, it is most commonly employed to change the ownership from an ordinary user to the root (i.e., administrative) user, thereby providing access to all parts of and all commands on the computer or system. For this reason, it is often referred to (although somewhat inaccurately) as the superuser command. It is also sometimes called the switch user command.
 
@@ -218,9 +218,7 @@
   su alice
 
   #The user will then be prompted for the password of the account with the username alice.
-```
-
-
+  ```
 
 - `du` (abbreviated from disk usage) is a standard Unix program used to estimate file space usage—space used under a particular directory or files on a file system.
 
