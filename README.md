@@ -240,6 +240,73 @@
   grep -- -v file
   ```
 
+- `ssh` OpenSSH SSH client (remote login program)
+
+You can setup configuration in `~/.ssh/config` for ssh
+
+```bash
+ Host qa1
+    User dong
+    Hostname 100.121.55.52
+
+# Now you can do 'ssh qa1', it will do 'ssh dong@100.121.55.52'
+```
+
+Create ssh tunnel for forwarding
+
+```bash
+ssh -N -R 3999:localhost:80 <example_ip>
+```
+
+```bash
+ssh -N -R
+```
+
+The `-N` makes sure that you don’t login to the remote server, and `-R` is what tells SSH to create the tunnel.
+
+
+```bash
+3999:localhost:80
+```
+
+This is where you set the port for the remote server, the local server address, and the port for the local server.
+
+The first number is the port that you want the remote server to listen on. This can be any number between 1024-65535, and you’ll need to make sure to allow that port in your firewall if you have one set up. Next is the local server address. In almost all cases this will be localhost. And finally, the last number is the port that your local web server is listening on.
+
+```bash
+<example_ip>
+```
+
+The last part of the command is where you specify your user that has SSH access to the server and the address of the remote server.
+
+If you already have a domain name setup in DNS for the server, you’ll be able to use that to access the tunnel. Otherwise, you’ll need to use the server’s IP address.
+
+Now that you have an SSH tunnel open, going to the remote server address with the forwarded port in your browser, e.g. example.com:3999, should allow you to view your local website or app from anywhere with an internet connection.
+
+If you have `~/.ssh/config` set up with `LocalForward` like below
+
+```bash
+ Host qa1
+    User dong
+    Hostname 100.121.55.52
+    LocalForward 5000 100.121.55.52:8044
+
+```
+
+you can do
+
+```bash
+ssh -N qa1
+```
+
+or run it in background
+
+```bash
+ssh -N -f qa1
+```
+
+Both `ssh -N -f qa1` and `ssh -N qa1 &` will run the job in background, but the difference between two is that `ssh -N qa1 &` will attach to terminal, if terminal is closed, tunnel is closed too. `ssh -N -f qa1` will not attach the tunnel to the terminal.
+
 ## ShortCut
 
 ### Searching Through The Command History
