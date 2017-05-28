@@ -244,38 +244,38 @@
 
 You can setup configuration in `~/.ssh/config` for ssh
 
-```bash
- Host qa1
-    User dong
-    Hostname 100.121.55.52
+  ```bash
+   Host qa1
+      User dong
+      Hostname 100.121.55.52
 
-# Now you can do 'ssh qa1', it will do 'ssh dong@100.121.55.52'
-```
+  # Now you can do 'ssh qa1', it will do 'ssh dong@100.121.55.52'
+  ```
 
 Create ssh tunnel for forwarding
 
-```bash
-ssh -N -R 3999:localhost:80 <example_ip>
-```
+  ```bash
+  ssh -N -R 3999:localhost:80 <example_ip>
+  ```
 
-```bash
-ssh -N -R
-```
+  ```bash
+  ssh -N -R
+  ```
 
 The `-N` makes sure that you don’t login to the remote server, and `-R` is what tells SSH to create the tunnel.
 
 
-```bash
-3999:localhost:80
-```
+  ```bash
+  3999:localhost:80
+  ```
 
 This is where you set the port for the remote server, the local server address, and the port for the local server.
 
 The first number is the port that you want the remote server to listen on. This can be any number between 1024-65535, and you’ll need to make sure to allow that port in your firewall if you have one set up. Next is the local server address. In almost all cases this will be localhost. And finally, the last number is the port that your local web server is listening on.
 
-```bash
-<example_ip>
-```
+  ```bash
+  <example_ip>
+  ```
 
 The last part of the command is where you specify your user that has SSH access to the server and the address of the remote server.
 
@@ -285,25 +285,25 @@ Now that you have an SSH tunnel open, going to the remote server address with th
 
 If you have `~/.ssh/config` set up with `LocalForward` like below
 
-```bash
- Host qa1
-    User dong
-    Hostname 100.121.55.52
-    LocalForward 5000 100.121.55.52:8044
+  ```bash
+   Host qa1
+      User dong
+      Hostname 100.121.55.52
+      LocalForward 5000 100.121.55.52:8044
 
-```
+  ```
 
 you can do
 
-```bash
-ssh -N qa1
-```
+  ```bash
+  ssh -N qa1
+  ```
 
 or run it in background
 
-```bash
-ssh -N -f qa1
-```
+  ```bash
+  ssh -N -f qa1
+  ```
 
 Both `ssh -N -f qa1` and `ssh -N qa1 &` will run the job in background, but the difference between two is that `ssh -N qa1 &` will attach to terminal, if terminal is closed, tunnel is closed too. `ssh -N -f qa1` will not attach the tunnel to the terminal.
 
@@ -311,14 +311,14 @@ Both `ssh -N -f qa1` and `ssh -N qa1 &` will run the job in background, but the 
 
 ### Searching Through The Command History
 
-```bash
-# To search backward in the history for a particular string, type C-r. Typing C-s searches forward through the histor
-# ie. C-r goes in direction of from the newest histroy to the oldest
-# ie. C-s goes in direction of from the oldest to the newest
+  ```bash
+  # To search backward in the history for a particular string, type C-r. Typing C-s searches forward through the histor
+  # ie. C-r goes in direction of from the newest histroy to the oldest
+  # ie. C-s goes in direction of from the oldest to the newest
 
-# example:
-(reverse-i-search)`ss': ssh -vvv lp123
-```
+  # example:
+  (reverse-i-search)`ss': ssh -vvv lp123
+  ```
 
 ###  .bash_profile, .profile, .bashrc, zshrc, .zlogin
 
