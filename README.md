@@ -349,3 +349,27 @@ Note that you may see here and there recommendations to either put environment v
 
 ¹ For completeness, by request: if `.bash_profile` doesn't exist, bash also tries `.bash_login` before falling back to `.profile`. Feel free to forget it exists.
 
+
+### stdout, stdin, stderr
+
+It is good practice to redirect all error messages to `stderr`, while directing regular output to stdout. It is beneficial to do this because anything written to `stderr` is not buffered, i.e., it is immediately written to the screen so that the user can be warned immediately.
+
+Python example:
+
+```python
+HOST="www.example.org"
+# Ports are handled in ~/.ssh/config since we use OpenSSH
+COMMAND="uname -a"
+
+ssh = subprocess.Popen(["ssh", "%s" % HOST, COMMAND],
+                       shell=False,
+                       stdout=subprocess.PIPE,
+                       stderr=subprocess.PIPE)
+result = ssh.stdout.readlines()
+if result == []:
+    error = ssh.stderr.readlines()
+    print >>sys.stderr, "ERROR: %s" % error  # Note: the '>>' will redirect error to stderr
+else:
+    print result
+```
+
