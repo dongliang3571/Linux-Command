@@ -373,3 +373,26 @@ else:
     print result
 ```
 
+### `&>` and `>&` and `>`
+
+`STDIN` is represented by `0`, `STDOUT` by `1`, and STDERR by `2.
+
+```
+There  are  two  formats  for  redirecting standard output and standard
+   error:
+
+          &>word
+   and
+          >&word
+
+   Of the two forms, the first is preferred.  This is semantically equiva-
+   lent to
+
+          >word 2>&1
+```
+
+That is , 
+- `command 1> file` redirects the stdout to a file, stderr will show 
+- `command 2> file` redirects the stderr to a file, stdout will show
+- `command &> file` is redirects both stdout and stderr to file, neither stderr or stdout will show, that is same as `command > file 2>&1`
+
