@@ -247,9 +247,9 @@
   ```bash
    Host qa1
       User dong
-      Hostname 100.121.55.52
+      Hostname <ip_adress>
 
-  # Now you can do 'ssh qa1', it will do 'ssh dong@100.121.55.52'
+  # Now you can do 'ssh qa1', it will do 'ssh dong@<ip_adress>'
   ```
 
   Create ssh tunnel for forwarding
@@ -288,8 +288,8 @@
   ```bash
    Host qa1
       User dong
-      Hostname 100.121.55.52
-      LocalForward 5000 100.121.55.52:8044
+      Hostname <ip_adress>
+      LocalForward 5000 <ip_adress>:<port_number>
 
   ```
 
