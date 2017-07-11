@@ -396,3 +396,56 @@ That is ,
 - `command 2> file` redirects the stderr to a file, stdout will show
 - `command &> file` is redirects both stdout and stderr to file, neither stderr or stdout will show, that is same as `command > file 2>&1`
 
+
+# Terminal shortcut
+
+[Shortcuts to move faster in Bash command line](http://teohm.com/blog/shortcuts-to-move-faster-in-bash-command-line/)
+
+[shortcuts](http://www.bigsmoke.us/readline/shortcuts)
+
+### Basic moves
+
+- Move back one character. `Ctrl + b`
+- Move forward one character. `Ctrl + f`
+- Delete current character. `Ctrl + d`
+- Delete previous character. `Backspace`
+- Undo. `Ctrl + -`
+
+### Moving faster and
+
+- Move to the start of line. `Ctrl + a`
+- Move to the end of line. `Ctrl + e`
+- Move forward a word. `Meta + f` (a word contains alphabets and digits, no symbols)
+- Move backward a word. `Meta + b`
+- Move between start of command line and current cursor position (and back again). `Ctrl + xx`
+- Clear the screen. `Ctrl + l`
+
+**What is Meta?** **Meta** is your Alt key, normally. For Mac OSX user, you need to enable it yourself. Open Terminal > Preferences > Settings > Keyboard, and enable Use option as meta key. Meta key, by convention, is used for operations on word. **By default, you can use `ESC` instead of Meta(alt) key.**
+
+### Cut, paste (‘Kill and yank’ for old schoolers) and editing words
+
+- Cut from cursor to the end of line. `Ctrl + k`
+- Cut from cursor to the end of word. `Meta + d`
+- Cut from cursor to the start of word. `Meta + Backspace`
+- Cut from cursor to previous whitespace. `Ctrl + w`
+- Cut from cursor to the begining of the line. `Ctrl + u`
+- Paste the last cut text. `Ctrl + y`
+- Loop through and paste previously cut text. `Meta + y` (use it after `Ctrl + y`)
+- Loop through and paste the last argument of previous commands. `Meta + .`
+- Capitalize first character. `Meta + c`
+- Capitalize the whole word. `Meta + u`
+- Swap current word with previous. `Meta + t`
+
+### Search the command history
+
+- Search as you type. `Ctrl + r` and type the search term; Repeat `Ctrl + r` to loop through results.
+- Search the last remembered search term. `Ctrl + r` twice.
+- End the search at current history entry. `Ctrl + j`
+- Cancel the search and restore original line. `Ctrl + g` or `ESC`
+
+### Others
+
+– stops the output to the screen (for long running verbose command). `Ctrl + s` 
+– allow output to the screen (if previously stopped using command above). `Ctrl + q` 
+– terminate the command. `Ctrl + c` 
+– suspend/stop the command. `Ctrl + z` 
