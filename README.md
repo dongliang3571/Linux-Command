@@ -445,7 +445,7 @@ That is ,
 
 ### Others
 
-– stops the output to the screen (for long running verbose command). `Ctrl + s` 
-– allow output to the screen (if previously stopped using command above). `Ctrl + q` 
-– terminate the command. `Ctrl + c` 
-– suspend/stop the command. `Ctrl + z` 
+- stops the output to the screen (for long running verbose command). `Ctrl + s` 
+- allow output to the screen (if previously stopped using command above). `Ctrl + q` 
+- terminate the command. `Ctrl + c` 
+- suspend/stop the command. `Ctrl + z` 
