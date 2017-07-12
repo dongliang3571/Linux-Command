@@ -401,7 +401,7 @@ That is ,
 
 [Shortcuts to move faster in Bash command line](http://teohm.com/blog/shortcuts-to-move-faster-in-bash-command-line/)
 
-[shortcuts](http://www.bigsmoke.us/readline/shortcuts)
+[bash shortcuts](http://www.skorks.com/2009/09/bash-shortcuts-for-maximum-productivity/)
 
 ### Basic moves
 
