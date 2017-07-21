@@ -307,6 +307,67 @@
 
   Both `ssh -N -f qa1` and `ssh -N qa1 &` will run the job in background, but the difference between two is that `ssh -N qa1 &` will attach to terminal, if terminal is closed, tunnel is closed too. `ssh -N -f qa1` will not attach the tunnel to the terminal.
 
+- `lsb_release` print distribution specific information
+
+```bash
+$ lsb_release -a
+LSB Version:	:base-4.0-amd64:base-4.0-noarch:core-4.0-amd64:core-4.0-noarch:graphics-4.0-amd64:graphics-4.0-noarch:printing-4.0-amd64:printing-4.0-noarch
+Distributor ID:	CentOS
+Description:	CentOS release 6.5 (Final)
+Release:	6.5
+Codename:	Final
+displays all of the above information.
+```
+
+### difference betweet `stuff` and `$(stuff)`
+
+```bash
+echo `whoami`
+
+echo $(whoami)
+```
+
+The old-style backquotes `` ` ` `` do treat backslashes and nesting a bit different.
+
+The new-style `$()` interprets everything in between ( ) as a command.
+
+```bash
+echo $(uname | $(echo cat))
+Linux
+
+echo `uname | `echo cat``
+bash: command substitution: line 2: syntax error: unexpected end of file
+echo cat
+```
+
+works if the nested backquotes are escaped:
+
+```bash
+echo `uname | \`echo cat\``
+Linux
+```
+
+backslash fun:
+
+```bash
+echo $(echo '\\')
+\\
+
+echo `echo '\\'`
+\
+```
+
+The new-style `$()` applies to all POSIX-conformant shells.
+As mouviciel pointed out, old-style `` ` ` `` might be necessary for older shells.
+
+Apart from the technical point of view, the old-style `` ` ` `` has also a visual disadvantage:
+
+Hard to notice: I like `$(program)` better than `` `program` ``
+
+Easily confused with a single quote: `` '`'`''`''`'`''`' ``
+
+Not so easy to type (maybe not even on the standard layout of the keyboard)
+
 ## ShortCut
 
 ### Searching Through The Command History
