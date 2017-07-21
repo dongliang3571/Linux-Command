@@ -319,7 +319,7 @@ Codename:	Final
 displays all of the above information.
 ```
 
-### difference betweet `stuff` and `$(stuff)`
+### difference betweet `` `stuff` `` and `$(stuff)`
 
 ```bash
 echo `whoami`
