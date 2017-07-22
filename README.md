@@ -343,7 +343,13 @@
    
    top -o cpu # sort the process by cpu usage
    ```
-  
+
+- `grep` - file pattern searcher
+
+  ```bash
+  grep 'ip' buildout.cfg # find the lines that contains keyword 'ip'
+  ```
+
 - `awk`- pattern scanning and processing language
   
   **Usage**
@@ -370,6 +376,38 @@
   
   We can reference every column (as delimited by whitespace) by variables associated with their column number. The first column can be referenced by `$1` for instance. The entire line can by referenced by `$0`
 
+- `xargs` - construct argument list(s) and execute utility
+
+  ```bash
+  # A scenario where you want to kill a bunch of process that contains same keyword
+  
+  ps aux 
+  
+  # USER  PID  %CPU ... CMD
+  # Dong  123  8.2  ... /java test
+  # Dong  234  2.4  ... /java test2
+  
+  ps aux | awk '/test/ {print $2}'
+  
+  # 123
+  # 234
+  
+  ps aux | awk '/test/ {print $2}' | xargs kill -9
+  
+  # Now xargs will be a argument set that contains all PIDs which generated from awk and 'kill -9' will take each pid as argument then kill all process that's selected
+  ```
+
+- `wc` q- word, line, character, and byte count
+
+  ```bash
+  wc buidlout.cfg
+  #        5      48    2697 buildout.cfg
+  
+  # -c - number of bytes
+  # -l - number of lines
+  # -m - number of characters
+  # -w - number of words
+  ```
 
 ### difference betweet `` `stuff` `` and `$(stuff)`
 
