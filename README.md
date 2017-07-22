@@ -227,6 +227,22 @@
   su just switches the user, providing a normal shell with an environment nearly the same as with the old user.
 
 - `du` (abbreviated from disk usage) is a standard Unix program used to estimate file space usage—space used under a particular directory or files on a file system.
+  ```bash
+  du -s, --summarize # display only a total for each argument, it shows storage usage for each folder
+  du -h, --human-readable # human readable, i.e. convert from Byte to KB, MB, GB 
+  
+  du -sh *
+  # 80K	bin
+  # 4.0K	buildout.cfg
+  # 24K	conf-ins
+  # 4.0K	develop-eggs
+  # 52M	eggs
+  # 24K	etc
+  # 4.0K	parts
+  # 24K	profiles
+  # 552K	src
+  # 28K	var
+  ```
 
 - `df` (abbreviation for disk free) is a standard Unix command used to display the amount of available disk space for file systems on which the invoking user has appropriate read access. df is typically implemented using the statfs or statvfs system calls.
 
@@ -309,15 +325,49 @@
 
 - `lsb_release` print distribution specific information
 
-```bash
-$ lsb_release -a
-LSB Version:	:base-4.0-amd64:base-4.0-noarch:core-4.0-amd64:core-4.0-noarch:graphics-4.0-amd64:graphics-4.0-noarch:printing-4.0-amd64:printing-4.0-noarch
-Distributor ID:	CentOS
-Description:	CentOS release 6.5 (Final)
-Release:	6.5
-Codename:	Final
-displays all of the above information.
-```
+  ```bash
+  $ lsb_release -a
+  LSB Version:	:base-4.0-amd64:base-4.0-noarch:core-4.0-amd64:core-4.0-noarch:graphics-4.0-amd64:graphics-4.0-noarch:printing-4.0-amd64:printing-4.0-noarch
+  Distributor ID:	CentOS
+  Description:	CentOS release 6.5 (Final)
+  Release:	6.5
+  Codename:	Final
+  displays all of the above information.
+  ```
+- `top`
+
+   ```bash
+   top # a process monitor
+   
+   top -o cpu # sort the process by cpu usage
+   ```
+  
+- `awk`- pattern scanning and processing language
+  
+  **Usage**
+  ```bash
+  awk '/search_pattern/ { action_to_take_on_matches; another_action; }' file_to_parse
+  ```
+  You can omit either the search_pattern or the action portion from any awk command. By default, the action taken if the "action" portion is not given is "print". This simply prints all lines that match.
+  
+  ```bash
+  awk '/c/' /etc/fstab # print out the lines with "c" in it
+  ```
+  
+  It's same as:
+  
+  ```bash
+  awk '/c/ {print}' /etc/fstab # print out the lines with "c" in it
+  ```
+  
+  we can use the action section to specify which pieces of information we want to print. For instance, to print only the first column, we can type:
+  
+  ```bash
+  awk '{print $1}' /etc/fstab # print out all lines in /etc/fstab file
+  ```
+  
+  We can reference every column (as delimited by whitespace) by variables associated with their column number. The first column can be referenced by `$1` for instance. The entire line can by referenced by `$0`
+
 
 ### difference betweet `` `stuff` `` and `$(stuff)`
 
