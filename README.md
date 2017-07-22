@@ -222,11 +222,12 @@
   
   [good resource](https://unix.stackexchange.com/questions/7013/why-do-we-use-su-and-not-just-su)
   
-  su - invokes a login shell after switching the user. A login shell resets most environment variables, providing a clean base.
+  `su` - invokes a login shell after switching the user. A login shell resets most environment variables, providing a clean base.
 
-  su just switches the user, providing a normal shell with an environment nearly the same as with the old user.
+  `su` just switches the user, providing a normal shell with an environment nearly the same as with the old user.
 
 - `du` (abbreviated from disk usage) is a standard Unix program used to estimate file space usage—space used under a particular directory or files on a file system.
+
   ```bash
   du -s, --summarize # display only a total for each argument, it shows storage usage for each folder
   du -h, --human-readable # human readable, i.e. convert from Byte to KB, MB, GB 
@@ -334,6 +335,7 @@
   Codename:	Final
   displays all of the above information.
   ```
+  
 - `top`
 
    ```bash
