@@ -247,6 +247,20 @@
 
 - `df` (abbreviation for disk free) is a standard Unix command used to display the amount of available disk space for file systems on which the invoking user has appropriate read access. df is typically implemented using the statfs or statvfs system calls.
 
+- `hexdump` ASCII, decimal, hexadecimal, octal dump
+  
+  ```bash
+  hexdump -C yourfile.pdf # dump binary file into both hex and ascii value
+  
+  # -b One-byte octal display.  Display the input offset in hexadecimal, followed by sixteen space-separated, three column, zero-  filled, bytes of input data, in octal, per line.
+  
+  # -C Canonical hex+ASCII display.  Display the input offset in hexadecimal, followed by sixteen space-separated, two column, hexadecimal bytes, followed by the same sixteen bytes in %_p format enclosed in ``|'' characters.
+  
+  # -c One-byte character display.  Display the input offset in hexadecimal, followed by sixteen space-separated, three column, space-filled, characters of input data per line.
+  
+  # -d Two-byte decimal display.  Display the input offset in hexadecimal, followed by eight space-separated, five column, zero-filled, two-byte units of input data, in unsigned decimal, per line.
+  ```
+
 - double dash `--`
 
   More precisely, a double dash (--) is used in bash built-in commands and many other commands to signify the end of command options, after which only positional parameters are accepted.
