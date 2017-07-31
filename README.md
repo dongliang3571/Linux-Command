@@ -272,6 +272,21 @@
   # -d Two-byte decimal display.  Display the input offset in hexadecimal, followed by eight space-separated, five column, zero-filled, two-byte units of input data, in unsigned decimal, per line.
   ```
 
+- `xxd` make a hexdump or do the reverse. Can do bits, i.e `1`s and `0`s. Default is `hexdump` too
+
+  ```bash
+  xxd -b yourfile.pdf # dump binary file into both bits and ascii value
+  
+  # 00000000: 00100101 01010000 01000100 01000110 00101101 00110001  %PDF-1
+  # 00000006: 00101110 00110011 00001010 00100101 11000100 11100101  .3.%..
+  # 0000000c: 11110010 11100101 11101011 10100111 11110011 10100000  ......
+  # 00000012: 11010000 11000100 11000110 00001010 00110100 00100000  ....4
+  # 00000018: 00110000 00100000 01101111 01100010 01101010 00001010  0 obj.
+  # 0000001e: 00111100 00111100 00100000 00101111 01001100 01100101  << /Le
+  # 00000024: 01101110 01100111 01110100 01101000 00100000 00110101  ngth 5
+  # 0000002a: 00100000 00110000 00100000 01010010 00100000 00101111   0 R /
+  ```
+
 - double dash `--`
 
   More precisely, a double dash (--) is used in bash built-in commands and many other commands to signify the end of command options, after which only positional parameters are accepted.
