@@ -252,6 +252,17 @@
   ```bash
   hexdump -C yourfile.pdf # dump binary file into both hex and ascii value
   
+  # 00000000  25 50 44 46 2d 31 2e 33  0a 25 c4 e5 f2 e5 eb a7  |%PDF-1.3.%......|
+  # 00000010  f3 a0 d0 c4 c6 0a 34 20  30 20 6f 62 6a 0a 3c 3c  |......4 0 obj.<<|
+  # 00000020  20 2f 4c 65 6e 67 74 68  20 35 20 30 20 52 20 2f  | /Length 5 0 R /|
+  # 00000030  46 69 6c 74 65 72 20 2f  46 6c 61 74 65 44 65 63  |Filter /FlateDec|
+  # 00000040  6f 64 65 20 3e 3e 0a 73  74 72 65 61 6d 0a 78 01  |ode >>.stream.x.|
+  # 00000050  3d 90 41 6e c4 30 08 45  f7 39 c5 3f 01 03 98 18  |=.An.0.E.9.?....|
+  # 00000060  bc ee 6c ba cc aa 07 88  ba 9c 56 69 ee 2f 15 db  |..l.......Vi./..|
+  # 00000070  99 c8 12 96 be 79 9f 8f  0f 6c 38 c0 79 bc 29 aa  |.....y...l8.y.).|
+  # 00000080  28 fe be f1 85 9f 14 bb  d0 1f ba d8 ef fd 85 c7  |(...............|
+  # 00000090  e7 4b f0 fc 4d e6 f1 71  0a f6 13 4c ac de ab cb  |.K..M..q...L....|
+  
   # -b One-byte octal display.  Display the input offset in hexadecimal, followed by sixteen space-separated, three column, zero-  filled, bytes of input data, in octal, per line.
   
   # -C Canonical hex+ASCII display.  Display the input offset in hexadecimal, followed by sixteen space-separated, two column, hexadecimal bytes, followed by the same sixteen bytes in %_p format enclosed in ``|'' characters.
