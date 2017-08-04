@@ -449,6 +449,66 @@
   # -w - number of words
   ```
 
+- `sed` stream editor
+
+delete one or more lines from a file
+
+```bash
+sed '{[/]<n>|<string>|<regex>[/]}d' <fileName>       
+sed '{[/]<adr1>[,<adr2>][/]d' <fileName>
+
+# /.../=delimiters 
+
+# n = line number 
+
+# string = string found in in line 
+
+# regex = regular expression corresponding to the searched pattern 
+
+# addr = address of a line (number or pattern ) 
+
+# d = delete 
+```
+
+Here are some examples of how to use the above syntax. 
+
+Use the following code to remove the third line: 
+
+`sed '3d' fileName.txt`
+
+Remove the line containing the string "awk," by using: 
+
+`sed '/awk/d' filename.txt`
+
+You can remove the last line by typing in: 
+
+`sed '$d' filename.txt`
+
+Or remove all empty lines through: 
+
+```bash
+sed '/^$/d' filename.txt       
+sed '/./!d' filename.txt
+```
+
+Remove the line matching by a regular expression (by eliminating one containing digital characters, at least 1 digit, located at the end of the line): 
+
+`sed '/[0-9/][0-9]*$/d' filename.txt`
+
+Remove the interval between lines 7 and 9: 
+
+`sed '7,9d' filename.txt `
+
+The same operation as above but replacing the address with parameters: 
+
+`sed '/-Start/,/-End/d' filename.txt`
+
+The above examples are only changed at the display of the file (stdout1= screen). 
+
+For permanent changes to the old versions (<4) use a temporary file for GNU sed using the "-i[suffix]": 
+
+`sed -i".bak" '3d' filename.txt`
+
 ### difference betweet `` `stuff` `` and `$(stuff)`
 
 ```bash
