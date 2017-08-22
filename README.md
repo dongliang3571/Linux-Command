@@ -13,6 +13,12 @@
   ```
 
 - `cat` collect entire file's content and dump onto screen.
+
+  ```bash
+  cat /dev/null > file.log
+  # This will clean up the log even if the file.log is actively being writing by other application
+  ```
+  
 - `more` collect entire file's content display it in pages(space key for next page, enter key for next line)
 - `less` collect enite file's content display it in pages, what it differs from `more` is that it's able to go back to   previous page
   ```bash
