@@ -382,6 +382,12 @@
   displays all of the above information.
   ```
   
+- `netstat` show network status
+
+```bash
+netstat --listen # list all listening port
+```
+
 - `top`
 
    ```bash
