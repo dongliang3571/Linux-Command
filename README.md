@@ -1,5 +1,28 @@
 # Unix-Command
 
+- `curl` - transfer a URL
+
+  ```bash
+  curl --digest \
+    -u{username}:{password} \
+    -v \
+    -X PUT \
+    -H 'Expect: ' \
+    -H 'Content-type: application/xml' \
+    -d @- \
+    http://webapi.ebayclassifieds.com/webapi/partners/{username}/ads/{ext-reference-id} \
+        < ad.xml
+        
+  # --digest (HTTP)  Enables  HTTP  Digest  authentication. This is an authentication scheme that prevents the password from being sent over the wire in clear text.
+  # -X defines http method, e.g. POST, PUT
+  # -u{username}:{password}
+  # -H header
+  # -d, --data,  (HTTP) Sends the specified data in a POST request to the HTTP server. This will cause curl to pass the data to the server using the content-type application/x-www-form-urlencoded. If you specify -H "Content-Type: application/json", then you can put -d {"json": "json"}
+  # "-d @-" option means that curl will send a POST request with the data it reads from stdin, use "<" to feed a file to stdin
+  # "-d @filename" to directly read from file
+  
+  ```
+
 - `source` will execute commands from a file in the current shell.
 
   ```bash
