@@ -1,5 +1,11 @@
 # Unix-Command
 
+- `scp` secure copy
+
+  ```bash
+  scp <current-path> <username>@<ip-address>:/remote-path
+  ```
+  
 - `curl` - transfer a URL
 
   ```bash
