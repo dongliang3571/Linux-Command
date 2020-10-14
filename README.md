@@ -338,6 +338,8 @@
   
   https://unix.stackexchange.com/questions/115897/whats-ssh-port-forwarding-and-whats-the-difference-between-ssh-local-and-remot
   
+  https://www.ssh.com/ssh/tunneling/example
+  
   You can setup configuration in `~/.ssh/config` for ssh
 
   ```bash
