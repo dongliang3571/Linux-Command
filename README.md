@@ -334,6 +334,10 @@
 
 - `ssh` OpenSSH SSH client (remote login program)
 
+  **port forwading**
+  
+  https://unix.stackexchange.com/questions/115897/whats-ssh-port-forwarding-and-whats-the-difference-between-ssh-local-and-remot
+  
   You can setup configuration in `~/.ssh/config` for ssh
 
   ```bash
