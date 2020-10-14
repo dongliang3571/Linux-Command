@@ -550,6 +550,41 @@ For permanent changes to the old versions (<4) use a temporary file for GNU sed 
 
 `sed -i".bak" '3d' filename.txt`
 
+- `read` - take user input
+
+A no-argument call of read fetches a single line from the standard input stream and assigns it to the REPLY built-in variable:
+
+```bash
+$ read
+baeldung is a cool tech site # what we type
+$ echo $REPLY
+baeldung is a cool tech site
+```
+
+Let’s now specify some variables to store the results:
+
+```bash
+$ read input1 input2 input3
+baeldung is a cool tech site # what we type
+$ echo "[$input1] [$input2] [$input3]"
+[baeldung] [is] [a cool tech site]
+```
+
+If the number of variables is lower than the words obtained, all the remaining words and their delimiters are crammed in the last variable.
+
+By default the read command splits the input into words, considering the <space>,<tab> and <newline> characters as word delimiters.
+
+We can pass the input on multiple lines using the special <backslash> character:
+
+```bash
+$ read input1 input2 input3
+baeldung \ # what 
+is a cool \ # we 
+tech site   # type
+$ echo "[$input1] [$input2] [$input3]"
+[baeldung] [is] [a cool tech site]
+```
+
 ### difference betweet `` `stuff` `` and `$(stuff)`
 
 ```bash
