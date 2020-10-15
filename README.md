@@ -640,6 +640,20 @@ Easily confused with a single quote: `` '`'`''`''`'`''`' ``
 
 Not so easy to type (maybe not even on the standard layout of the keyboard)
 
+### Parameter expansion(conditional operator)
+
+According to the section on "Parameter Expansion" in the bash man page, this means "use the default value if the parameter is unset." So for example,
+
+```bash
+${PID-/run/unicorn.pid}
+```
+
+equals `$PID if $PID is set, otherwise /run/unicorn.pid`.
+
+
+`${A-something}` only means an **unset** variable. Not an empty one.
+And to put to comparison with `:-`, which will use default value (the one after minus sign) if variable is **unset or null** (as in empty string).
+
 ## ShortCut
 
 ### Searching Through The Command History
