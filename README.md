@@ -340,6 +340,14 @@
   
   https://www.ssh.com/ssh/tunneling/example
   
+  1. local: -L Specifies that the given port on the local (client) host is to be forwarded to the given host and port on the remote side.
+
+  ssh -L sourcePort:forwardToHost:onPort connectToHost means: connect with ssh to connectToHost, and forward all connection attempts to the local sourcePort to port onPort on the machine called forwardToHost, which can be reached from the connectToHost machine.
+
+  2. remote: -R Specifies that the given port on the remote (server) host is to be forwarded to the given host and port on the local side.
+
+  ssh -R sourcePort:forwardToHost:onPort connectToHost means: connect with ssh to connectToHost, and forward all connection attempts to the remote sourcePort to port onPort on the machine called forwardToHost, which can be reached from your local machine.
+
   You can setup configuration in `~/.ssh/config` for ssh
 
   ```bash
@@ -360,7 +368,7 @@
   ssh -N -R
   ```
 
-  The `-N` makes sure that you don’t login to the remote server, and `-R` is what tells SSH to create the tunnel.
+  The `-N` will let you NOT get a shell prompt after you connect, it just hang there, and `-R` is what tells SSH to create the tunnel.
 
 
   ```bash
