@@ -655,6 +655,23 @@ $ echo "[$input1] [$input2] [$input3]"
 [baeldung] [is] [a cool tech site]
 ```
 
+### Bash 
+
+`-z string` True if the string is null (an empty string)
+
+```bash
+String=''   # Zero-length ("null") string variable.
+
+if [ -z "$String" ]
+then
+  echo "\$String is null."
+else
+  echo "\$String is NOT null."
+fi     
+
+# $String is null.
+```
+
 ### difference betweet `` `stuff` `` and `$(stuff)`
 
 ```bash
