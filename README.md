@@ -1,5 +1,24 @@
 # Unix-Command
 
+- `exec` replaces the current shell, no subshell is created. https://www.baeldung.com/linux/exec-command-in-shell-script
+  
+  ```bash
+  # find out current sheel PID
+  echo $$
+  # Let's say PID is 123
+  
+  exec sleep 300 # replace current sheel with sleep command
+  
+  # From a new shell
+  ps
+  
+  # You will see something like
+  # user1       53    52  0 23:37 tty2     00:00:00 -bash
+  # user1       123    78  0 23:39 tty1     00:00:00 sleep 300
+  
+  # if exec was not used, a use process will be created
+  ```
+  
 - `scp` secure copy
 
   ```bash
