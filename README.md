@@ -1,4 +1,4 @@
-# Unix-Command
+# Linux-Command
 
 - `exec` replaces the current shell, no subshell is created. https://www.baeldung.com/linux/exec-command-in-shell-script
   
