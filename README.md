@@ -1,5 +1,45 @@
 # Linux-Command
 
+- `lsof` - list open files
+
+   ```bash
+   # -i [i] selects the listing of files any of whose Internet address matches the address specified in i.  If no  address  is  specified, this option selects the listing of all Internet and x.25 (HP-UX) network files
+   lsof -i udp:portNumber 
+   lsof -i :80
+   lsof -i :80 | grep LISTEN
+   ```
+
+- `netstat` - show network status. netstat will continuously display the information regarding packet traffic on the configured network interfaces.
+ 
+   ```bash
+   # --udp/-u show all udp connections
+   # --tcp/-u show all tcp connections
+   # -a With the default display, show the state of all sockets; normally sockets used by server processes are not shown.
+   # -l Print full IPv6 address.
+   # -n Show network addresses as numbers (normally netstat interprets addresses and attempts to display them symbolically).
+   
+   # grep the connection with port 53613
+   netstat -at | grep 53613
+   ```
+
+- `tcpdump` - dump traffic on a network 
+  
+  ```bash
+  # -A Print each packet (minus its link level header) in ASCII.  Handy for  capturing web pages
+  # -i Listen on interface
+  # dump traffic on loop back network
+  tcpdump -i lo -A | grep "Host:"
+  
+  # dump traffic on default docker network
+  tcpdump -i docker0 -A | grep "Host:"
+  
+  # dump traffic on for UDP only
+  tcpdump -i docker0 -A | grep "Host:"
+  
+  # any traffic satisfy an expression
+  tcpdump -i any "udp port 8125" -w output.pcap
+  ```
+
 - `exec` replaces the current shell, no subshell is created. https://www.baeldung.com/linux/exec-command-in-shell-script
   
   ```bash
