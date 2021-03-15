@@ -1,5 +1,16 @@
 # Linux-Command
 
+- `disown` - Remove jobs from current shel
+ 
+   ```bash
+   # disown jobID1 jobID2 ... jobIDN
+   # -h prevents hangup.
+    
+   python script.py &
+   disown -h
+   # now the program will stay in the background even you shut down the terminal
+   ```
+   
 - `lsof` - list open files
 
    ```bash
